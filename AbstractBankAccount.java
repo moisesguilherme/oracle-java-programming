@@ -50,5 +50,15 @@ abstract public class AbstractBankAccount {
 	public void withdraw(int amt) {
 		balance = balance - amt;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return "\n\nBank Name     : " + getBankName() +
+				"\nAccount Holder : " + accountName +
+				"\nAccount Number : " + accountNum + 
+				"\nAccount balance: " + balance;
+	}//end method toString
+	
 
 }// end class AbstractBankAccount
