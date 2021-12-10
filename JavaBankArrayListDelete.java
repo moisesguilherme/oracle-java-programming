@@ -14,7 +14,7 @@ public class JavaBankArrayListDelete extends JFrame {
 	private static final long serialVersionUID = 1L;
 	// Make these variables publicly available
     public String Name;
-    public int Accountnum;
+    public int accountNum;
     public int Balance;
 
     
@@ -26,8 +26,8 @@ public class JavaBankArrayListDelete extends JFrame {
     private JTextField NameJTextField;
  
     // JLabel and JTextField for account number
-    private JLabel AccountnumJLabel;
-    private JTextField AccountnumJTextField;
+    private JLabel accountNumJLabel;
+    private JTextField accountNumJTextField;
  
     // JLabel and JTextField for balance
     private JLabel BalanceJLabel;
@@ -99,17 +99,17 @@ public class JavaBankArrayListDelete extends JFrame {
         NameJTextField.setHorizontalAlignment(JTextField.RIGHT);
         inputDetailJPanel.add(NameJTextField);
  
-        // set up AccountnumJLabel
-        AccountnumJLabel = new JLabel();
-        AccountnumJLabel.setBounds(8, 56, 100, 23);
-        AccountnumJLabel.setText("Account Number:");
-        inputDetailJPanel.add(AccountnumJLabel);
+        // set up accountNumJLabel
+        accountNumJLabel = new JLabel();
+        accountNumJLabel.setBounds(8, 56, 100, 23);
+        accountNumJLabel.setText("Account Number:");
+        inputDetailJPanel.add(accountNumJLabel);
  
-        // set up AccountnumTextField
-        AccountnumJTextField = new JTextField();
-        AccountnumJTextField.setBounds(112, 56, 80, 21);
-        AccountnumJTextField.setHorizontalAlignment(JTextField.RIGHT);
-        inputDetailJPanel.add(AccountnumJTextField);
+        // set up accountNumTextField
+        accountNumJTextField = new JTextField();
+        accountNumJTextField.setBounds(112, 56, 80, 21);
+        accountNumJTextField.setHorizontalAlignment(JTextField.RIGHT);
+        inputDetailJPanel.add(accountNumJTextField);
  
         // set up BalanceJLabel
         BalanceJLabel = new JLabel();
@@ -240,7 +240,7 @@ public class JavaBankArrayListDelete extends JFrame {
  
      // clear other JTextFields for new data
         NameJTextField.setText("");
-        AccountnumJTextField.setText("0");
+        accountNumJTextField.setText("0");
         BalanceJTextField.setText("0");
         DepositJTextField.setText("0");
         WithdrawJTextField.setText("0");
@@ -264,12 +264,12 @@ public class JavaBankArrayListDelete extends JFrame {
     	//Get Name from Text Field
     	Name = NameJTextField.getText();
     	
-    	//Get Accountnum from Text Field and convert to int unless blank then set to 0
-    	if (AccountnumJTextField.getText() == "0") {
-    		Accountnum = 0;
+    	//Get accountNum from Text Field and convert to int unless blank then set to 0
+    	if (accountNumJTextField.getText() == "0") {
+    		accountNum = 0;
     	}
     	else {
-    		Accountnum = Integer.parseInt(AccountnumJTextField.getText());
+    		accountNum = Integer.parseInt(accountNumJTextField.getText());
     	}
     
     		
@@ -282,13 +282,13 @@ public class JavaBankArrayListDelete extends JFrame {
     	}
         
             
-    	if ((Name != "") & (Accountnum != 0))  {
+    	if ((Name != "") & (accountNum != 0))  {
         	    //add a new account to the list using the Account constructor
-        		Accounts.add(new Account(Name,Accountnum,Balance));
+        		Accounts.add(new Account(Name,accountNum,Balance));
         		//Set a temp Account for display purposes
         		Account tempAccount = (Account)Accounts.get(Accounts.size()-1);
         		//Display tempAccount
-        		displayJTextArea.setText(Accounts.size() + " " + tempAccount.getaccountname() + " " + tempAccount.getaccountnum() + " " + tempAccount.getbalance());
+        		displayJTextArea.setText(Accounts.size() + " " + tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " " + tempAccount.getBalance());
         		       		    		
         }
         else {
@@ -297,7 +297,7 @@ public class JavaBankArrayListDelete extends JFrame {
         
      // clear other JTextFields for new data
         NameJTextField.setText("");
-        AccountnumJTextField.setText("0");
+        accountNumJTextField.setText("0");
         BalanceJTextField.setText("0");
         DepositJTextField.setText("0");
         WithdrawJTextField.setText("0");            
@@ -311,13 +311,13 @@ public class JavaBankArrayListDelete extends JFrame {
     	}else {
     		
     		// get user input
-            int Accountnum = Integer.parseInt(AccountnumJTextField.getText());
+            int accountNum = Integer.parseInt(accountNumJTextField.getText());
                     
     	 for ( int i = 0; i < Accounts.size(); i++ )
          {
          // get the element
              Account tempAccount = (Account)Accounts.get(i);                
-             if ((tempAccount.accountnum == Accountnum)) {
+             if ((tempAccount.accountNum == accountNum)) {
      		    Accounts.remove(i);
      		    //break;
      	    }
@@ -325,7 +325,7 @@ public class JavaBankArrayListDelete extends JFrame {
          }
     	}
         NameJTextField.setText("");
-        AccountnumJTextField.setText("0");
+        accountNumJTextField.setText("0");
         BalanceJTextField.setText("0");
         DepositJTextField.setText("0");
         WithdrawJTextField.setText("0");
@@ -344,7 +344,7 @@ public class JavaBankArrayListDelete extends JFrame {
     	}else {
     		
     		// get user input
-            int Accountnum = Integer.parseInt(AccountnumJTextField.getText());
+            int accountNum = Integer.parseInt(accountNumJTextField.getText());
             int Deposit = Integer.parseInt(DepositJTextField.getText());
             int Withdraw = Integer.parseInt(WithdrawJTextField.getText());
             
@@ -354,17 +354,17 @@ public class JavaBankArrayListDelete extends JFrame {
             // get the element and set to TempAccount
                 Account tempAccount = (Account)Accounts.get(i);    
                 // if account number matches and deposit field has entry then deposit in account
-                if ((tempAccount.accountnum == Accountnum) && (Deposit>0)) {
-        		    tempAccount.setbalance(tempAccount.getbalance()+Deposit);
+                if ((tempAccount.accountNum == accountNum) && (Deposit>0)) {
+        		    tempAccount.setBalance(tempAccount.getBalance()+Deposit);
         		    Accounts.set(i, tempAccount);
-        		    displayJTextArea.setText(tempAccount.getaccountname() + " " + tempAccount.getaccountnum() + " " + tempAccount.getbalance());
+        		    displayJTextArea.setText(tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " " + tempAccount.getBalance());
         		
         	    }
              // if account number matches and withdrawal field has entry then withdraw from account
-        	    if ((tempAccount.accountnum == Accountnum) && (Withdraw>0)) {        		
-        	    	tempAccount.setbalance(tempAccount.getbalance()-Withdraw);
+        	    if ((tempAccount.accountNum == accountNum) && (Withdraw>0)) {        		
+        	    	tempAccount.setBalance(tempAccount.getBalance()-Withdraw);
         		    Accounts.set(i, tempAccount);
-        		    displayJTextArea.setText(tempAccount.getaccountname() + " " + tempAccount.getaccountnum() + " " + tempAccount.getbalance());
+        		    displayJTextArea.setText(tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " " + tempAccount.getBalance());
         		    
         	    } 
            }
@@ -372,7 +372,7 @@ public class JavaBankArrayListDelete extends JFrame {
         
         // clear other JTextFields for new data
     	NameJTextField.setText("");
-        AccountnumJTextField.setText("0");
+        accountNumJTextField.setText("0");
         BalanceJTextField.setText("0");
         DepositJTextField.setText("0");
         WithdrawJTextField.setText("0");
@@ -391,14 +391,14 @@ public class JavaBankArrayListDelete extends JFrame {
     	}else {
     	for (int i=0; i < Accounts.size(); i++) { 
     		    Account tempAccount = (Account)Accounts.get(i);
-    		    displayJTextArea.append(tempAccount.getaccountname() + " " + tempAccount.getaccountnum() + " " + tempAccount.getbalance()  + "\n");
+    		    displayJTextArea.append(tempAccount.getAccountName() + " " + tempAccount.getAccountNum() + " " + tempAccount.getBalance()  + "\n");
     		    
     			       
     	}
     	}
         // clear other JTextFields for new data
     	NameJTextField.setText("");
-        AccountnumJTextField.setText("0");
+        accountNumJTextField.setText("0");
         BalanceJTextField.setText("0");
         DepositJTextField.setText("0");
         WithdrawJTextField.setText("0");

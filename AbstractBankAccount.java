@@ -4,17 +4,25 @@ abstract public class AbstractBankAccount {
 	protected String accountName;
 	protected int accountNum;
 	protected int balance;
-
+	private int bonusValue;
+	
+	
+	//constructor for AbstractBankAccount
+	public AbstractBankAccount(String name, int num, int amt){
+		accountName=name;
+		accountNum=num;
+		balance=amt;
+	}//end constructor method
+	
 	
 	abstract public void deposit(int amt);
-	
+
 	public String getBankName() {
 		return InterfaceBankAccount.BANK;
 	}
 
 	// accessor to get the accountname
 	public String getAccountName() {
-
 		return accountName;
 	}
 
@@ -22,30 +30,25 @@ abstract public class AbstractBankAccount {
 		accountName = name;
 	}
 
-	// modifier to set the accountnumber
+	public int getAccountNum() {
+		return accountNum;
+	}
+
 	public void setAccountNum(int num) {
 		accountNum = num;
 	}
 
-	// modifier to set the balance
-	public void setbalance(int num) {
+	public int getBalance() {
+		return balance;
+	}
+
+	public void setBalance(int num) {
 		balance = num;
 	}
 
-	
-	
-	
 	// make a withdrawal from the balance
 	public void withdraw(int amt) {
 		balance = balance - amt;
 	}
-
-
-
-
-	
-
-
-	
 
 }// end class AbstractBankAccount

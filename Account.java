@@ -18,7 +18,10 @@ public class Account extends AbstractBankAccount{
 	    //make a deposit to the balance
 	    public void deposit(int amt)
 	    {
-	    	    balance=balance+amt;
+	    	if(amt>100)    
+	    		balance=balance+(amt + (int)(bonusValue * 0.1));
+	    	else
+	    		balance=balance+amt;
 	    }
 	    
 	    private static int calculateInitialBonusValue(int amt) {
