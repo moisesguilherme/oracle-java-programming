@@ -15,6 +15,7 @@ public class TestCustomerAccounts {
 		bankAccount[4] = new CreditAccount("Another", 66778, 1000, 500);
 		
 		showAllCustomerAccounts(bankAccount);
+		showAllCreditAccounts(bankAccount);
 	}
 	
 	public static void showAllCustomerAccounts(AbstractBankAccount[] bankAccount) {
@@ -22,7 +23,18 @@ public class TestCustomerAccounts {
 		System.out.print("\nAll Customer Accounts*****");
 		
 		for(AbstractBankAccount act: bankAccount)
-				System.out.println(act);
+			if(act instanceof Account)
+			  System.out.println(act);
 	}
 
+	
+	public static void showAllCreditAccounts(AbstractBankAccount[] bankAccount) {
+		
+		System.out.print("\nAll Credit Accounts*****");
+		
+		for(AbstractBankAccount act: bankAccount)
+			if(act instanceof CreditAccount)
+			  System.out.println(act);
+	}
+	
 }
