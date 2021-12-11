@@ -309,6 +309,13 @@ public class JavaBank extends JFrame {
     	catch(Exception e) {
     		System.out.println(e);
     	}
+    	finally {
+    		NameJTextField.setText(" ");
+    		AccountnumJTextField.setText("0");
+    		BalanceJTextField.setText("0");
+    		DepositJTextField.setText("0");
+    		WithdrawJTextField.setText("0");	
+    	}
     	
         
         //int emptyAccount = 11;
