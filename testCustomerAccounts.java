@@ -1,5 +1,5 @@
 
-public class TestCustomerAccounts {
+public class testCustomerAccounts {
 
 	public static void main(String[] args) {
 		

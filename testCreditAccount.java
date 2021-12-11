@@ -22,6 +22,13 @@ public class testCreditAccount {
 		System.out.println(C1);
 		System.out.println(C2);
 		
+		
+		//Test Upcasting example
+		AbstractBankAccount credAct1 = (AbstractBankAccount) new CreditAccount("Ilya Mustafana", 44559, 1000);
+		//credAct1.getCreditLimit(); //erro
+		
+		System.out.println("-----test Downcasting");
+		System.out.println(((CreditAccount)credAct1).getcreditlimit());
     }
 }
 
