@@ -286,22 +286,30 @@ public class JavaBank extends JFrame {
     	Name = NameJTextField.getText();
     	
     	//Get Accountnum from Text Field and convert to int unless blank then set to 0
-    	if (AccountnumJTextField.getText() == "0") {
-    		Accountnum = 0;
+    	
+    	try {
+    		if (AccountnumJTextField.getText() == "0") {
+        		Accountnum = 0;
+        	}
+        	else {
+        		Accountnum = Integer.parseInt(AccountnumJTextField.getText());
+        	}
+            		
+        	//Get Balance from Text Field and convert to int unless blank then set to 0
+        	if (BalanceJTextField.getText() == "0") {
+        		Balance = 0;
+        	}
+        	else {
+        		Balance = Integer.parseInt(BalanceJTextField.getText());
+        	}	
+    	}catch(NumberFormatException e) {
+    		Name = ("");
+    		JOptionPane.showInternalMessageDialog(null,  "Incorrect numeric value entered.");
     	}
-    	else {
-    		Accountnum = Integer.parseInt(AccountnumJTextField.getText());
+    	catch(Exception e) {
+    		System.out.println(e);
     	}
-    
-    		
-    	//Get Balance from Text Field and convert to int unless blank then set to 0
-    	if (BalanceJTextField.getText() == "0") {
-    		Balance = 0;
-    	}
-    	else {
-    		Balance = Integer.parseInt(BalanceJTextField.getText());
-    	}
-        
+    	
         
         //int emptyAccount = 11;
        
