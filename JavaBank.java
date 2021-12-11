@@ -1,6 +1,7 @@
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.InputMismatchException;
 
 import javax.swing.*;
 import javax.swing.border.*;
@@ -302,7 +303,7 @@ public class JavaBank extends JFrame {
         	else {
         		Balance = Integer.parseInt(BalanceJTextField.getText());
         	}	
-    	}catch(NumberFormatException e) {
+    	}catch(NumberFormatException | InputMismatchException e) {
     		Name = ("");
     		JOptionPane.showInternalMessageDialog(null,  "Incorrect numeric value entered.");
     	}
