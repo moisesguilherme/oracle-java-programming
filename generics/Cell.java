@@ -1,14 +1,14 @@
 package generics;
 
-public class Cell {
+public class Cell<T> {
 		
-	private Object data;
+	private T data;
 	
-	public void setValue(Object celldata) {
+	public void setValue(T celldata) {
 		data = celldata;
 	}
 	
-	public Object getValue() {
+	public T getValue() {
 		return data;
 	}
 

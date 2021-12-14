@@ -3,9 +3,14 @@ package generics;
 public class CellDriver {
 	
 	public static void main(String[] args) {
-		Cell cell = new Cell();
-		cell.setValue(1);
-		int num = (int)cell.getValue();
-		System.out.println(num);
+		Cell<Integer> integerCell = new Cell<Integer>();
+		Cell<String> stringCell = new Cell<String>();
+		integerCell.setValue(1);
+		stringCell.setValue("One");
+		int num = integerCell.getValue();
+		String str = stringCell.getValue();
+
+		System.out.println("Integer Value: " + num);
+		System.out.println("String Value: " + str);
 	}
 }
