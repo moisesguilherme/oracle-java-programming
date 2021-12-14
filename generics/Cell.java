@@ -2,13 +2,13 @@ package generics;
 
 public class Cell {
 		
-	private String data;
+	private Object data;
 	
-	public void setValue(String celldata) {
+	public void setValue(Object celldata) {
 		data = celldata;
 	}
 	
-	public String getValue() {
+	public Object getValue() {
 		return data;
 	}
 
