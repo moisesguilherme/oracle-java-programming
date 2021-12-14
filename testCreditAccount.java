@@ -5,9 +5,9 @@ public class testCreditAccount {
 	public static void main(String[] args) {
 	     
 		// Instantiate 3 accounts using constructor with values
-	    Account A1 = new Account("Sanjay Gupta",11556,300);
-		Account A2 = new Account("He Xai",22338, 500);
-		Account A3 = new Account("Ilya Mustafana", 44559, 1000);
+	    Account A1 = new Account("Sanjay Gupta",11556,300, AccountType.SAVINGS);
+		Account A2 = new Account("He Xai",22338, 500, AccountType.SAVINGS);
+		Account A3 = new Account("Ilya Mustafana", 44559, 1000, AccountType.SAVINGS);
 		
 		
 		// Instantiate 2 credit accounts using constructor with
@@ -29,6 +29,13 @@ public class testCreditAccount {
 		
 		System.out.println("-----test Downcasting");
 		System.out.println(((CreditAccount)credAct1).getcreditlimit());
+		
+		
+		//Enumerations Iteration
+		for(AccountType act: AccountType.values()) {
+			System.out.println("Value: " + act.name()
+						+ ", position: " + act.ordinal());
+		}
     }
 }
 

@@ -4,14 +4,15 @@
 public class Account extends AbstractBankAccount{
 		
 		private int bonusValue;
+		private AccountType type;
 	    
 	    //overloaded constructor for Account
-	    public Account(String name, int num, int amt)
+	    public Account(String name, int num, int amt, AccountType type)
 	    {
 	            
 	    	super(name, num, (amt  + calculateInitialBonusValue(amt)));
 	    	bonusValue = calculateInitialBonusValue(amt);
-	    		
+			this.type = type;
 	    }
 	    
 	    
@@ -39,6 +40,13 @@ public class Account extends AbstractBankAccount{
 	        				   "\nAccount Holder : " + accountName + 
 	        				   "\nAccount Number : " + accountNum +
 	        				   "\nAccount balance: " + balance);
-	      }
-
+	   }
+	    
+	   @Override
+	   public String toString() {
+		   return "\nAccount Type : " + this.type +
+				   super.toString();
+	   }
+	   
+	    
 	}

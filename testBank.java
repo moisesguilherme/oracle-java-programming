@@ -5,14 +5,14 @@ public class testBank {
      
 	// Instantiate 3 accounts
 	// Using constructor with values
-    Account A1 = new Account("Sanjay Gupta",11556,300);
-	Account A2 = new Account("Xe Xai", 22338, 500);
-	Account A3 = new Account("Ilya Mustafana", 44559, 1000);
+    Account a1 = new Account("Sanjay Gupta",11556,300, AccountType.SAVINGS);
+	Account a2 = new Account("Xe Xai", 22338, 500, AccountType.SAVINGS);
+	Account a3 = new Account("Ilya Mustafana", 44559, 1000, AccountType.SAVINGS);
 		
 	
-	System.out.print(A1);
-	System.out.print(A2);
-	System.out.print(A3);
+	System.out.print(a1);
+	System.out.print(a2);
+	System.out.print(a3);
 
 	}
 }
