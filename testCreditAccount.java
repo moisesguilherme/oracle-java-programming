@@ -31,11 +31,7 @@ public class testCreditAccount {
 		System.out.println(((CreditAccount)credAct1).getcreditlimit());
 		
 		
-		//Enumerations Iteration
-		for(AccountType act: AccountType.values()) {
-			System.out.println("Value: " + act.name()
-						+ ", position: " + act.ordinal());
-		}
+	
     }
 }
 

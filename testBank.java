@@ -13,6 +13,13 @@ public class testBank {
 	System.out.print(a1);
 	System.out.print(a2);
 	System.out.print(a3);
-
+	
+	
+	//Enumerations Iteration
+	for(AccountType act: AccountType.values()) {
+		System.out.println("Type: " + act.name()
+					+ "\nCode: " + act.getCode()
+					+ "\nRate: " + act.getRate());
+		}
 	}
 }
