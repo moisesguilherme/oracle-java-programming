@@ -1,5 +1,7 @@
 package generics.methods;
 
+import java.util.List;
+
 public class GenericMethodClass {
 	
 	
@@ -10,4 +12,11 @@ public class GenericMethodClass {
 		}
 		
 	}
+	
+	public void printList(List<?> list) {
+		for(Object elem: list)
+			System.out.println(elem);
+		System.out.println();
+	}
+		
 }
