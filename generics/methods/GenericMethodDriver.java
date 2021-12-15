@@ -26,8 +26,12 @@ public class GenericMethodDriver {
 		array2.add(30);
 		//gmc.printList(array2);
 		
-		System.out.println(gmc.sumOfList(array1));
-		System.out.println((int) gmc.sumOfList(array1));
+		//System.out.println(gmc.sumOfList(array1));
+		//System.out.println((int) gmc.sumOfList(array1));
+		
+		ArrayList<Integer> intArray = new ArrayList<Integer>();
+		gmc.addNumbers(intArray);
+		gmc.printList(intArray);
 
 	}
 

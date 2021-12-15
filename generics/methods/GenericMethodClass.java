@@ -22,6 +22,12 @@ public class GenericMethodClass {
 		return s;
 	}
 	
+	//Lower Bounded Wildcard
+	public void addNumbers(ArrayList<? super Integer> arrayList) {
+		for(int i =1; i <= 10; i++) {
+			arrayList.add(i);
+		}
+	}
 	
 	public void printList(List<?> list) {
 		for(Object elem: list)
