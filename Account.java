@@ -1,86 +1,52 @@
 
-public class Account implements InterfaceBankAccount{
-
-	// class variables
-		String accountname;
-	    int accountnum;
-	    int balance;
-	    
-	    //default constructor for Account
-	    Account()
-	    {
-	    	this.accountname="EMPTY";
-	    	this.accountnum=0;
-	    	this.balance=0;
-	    }
+//Anteriormente pegava a interface: 
+//public class Account implements InterfaceBankAccount
+public class Account extends AbstractBankAccount{
+		
+		private int bonusValue;
+		private AccountType type;
 	    
 	    //overloaded constructor for Account
-	    Account(String name, int num,int amt)
+	    public Account(String name, int num, int amt, AccountType type)
 	    {
-	            accountname=name;
-	    	    accountnum=num;
-	            balance=amt;
+	            
+	    	super(name, num, (amt  + calculateInitialBonusValue(amt)));
+	    	bonusValue = calculateInitialBonusValue(amt);
+			this.type = type;
 	    }
+	    
+	    
 	    //make a deposit to the balance
 	    public void deposit(int amt)
 	    {
-	    	    balance=balance+amt;
-	    }
-	    //make a withdrawal from the balance
-	    public void withdraw(int amt)
-	    {
-	    	    balance=balance-amt;
-	    }
-	    //modifier to set the accountname
-	    public void setaccountname(String name)
-	    {
-	    	    accountname = name;
-	    }
-	  //modifier to set the accountnumber
-	    public void setaccountnum(int num)
-	    {
-	    	    accountnum = num;
-	    }
-	  //modifier to set the balance
-	    public void setbalance(int num)
-	    {
-	    	    balance = num;
-	    }
-	  //accessor to get the accountname
-	    public String getaccountname ( ) {
-	    	 
-	    	return accountname;
+	    	if(amt>100)    
+	    		balance=balance+(amt + (int)(bonusValue * 0.1));
+	    	else
+	    		balance=balance+amt;
 	    }
 	    
-	  //accessor to get the accountnumber
-	    public int getaccountnum ( ) {
-	   	 
-	    	return accountnum;
-	    }
-	  //accessor to get the account balance
-	    public int getbalance ( ) {
-	      	 
-	    	return balance;
-	    }
-	    
-	    
-		@Override
-		public void getBalance() {
-			// TODO Auto-generated method stub
-			
+	    private static int calculateInitialBonusValue(int amt) {
+			if(amt >= 1 && amt <= 100) {
+				return 10; 
+			}else if(amt <= 300) {
+				return 20;
+			}else
+				return 30;
 		}
-
-		@Override
-		public String getBankName() {
-			return InterfaceBankAccount.BANK;
-		}
-		
+	    
 	    //print method 
 	    public void print() {
 	        System.out.println("\nBank Name      : " + getBankName() +	        		
-	        				   "\nAccount Holder : " + accountname + 
-	        				   "\nAccount Number : " + accountnum +
+	        				   "\nAccount Holder : " + accountName + 
+	        				   "\nAccount Number : " + accountNum +
 	        				   "\nAccount balance: " + balance);
-	      }
-
+	   }
+	    
+	   @Override
+	   public String toString() {
+		   return "\nAccount Type : " + this.type +
+				   super.toString();
+	   }
+	   
+	    
 	}
