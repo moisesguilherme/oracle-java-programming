@@ -1,4 +1,4 @@
-package collections.exemple.hashset.hashsetexample;
+package collections.example.hashset.hashsetexample;
 
 import java.util.HashSet;
 
