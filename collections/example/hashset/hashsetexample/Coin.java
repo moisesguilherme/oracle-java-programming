@@ -1,4 +1,4 @@
-package collections.exemple.hashset.hashsetexample;
+package collections.example.hashset.hashsetexample;
 
 public class Coin {
 	private int denomination;
