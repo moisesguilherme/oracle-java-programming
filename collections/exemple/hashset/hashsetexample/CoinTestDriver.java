@@ -24,6 +24,10 @@ public final class CoinTestDriver {
 		bagOfCoins.add(coin10);
 		
 		findCoin(bagOfCoins, coin100);
+		displayBagContents(bagOfCoins);
+		bagOfCoins.clear();
+		displayBagDetails(bagOfCoins);
+		
 		
 	}
 	
@@ -34,5 +38,19 @@ public final class CoinTestDriver {
 		else 
 			System.out.println("There is no coin" + coin.getDenomination() + " in thje bag");	
 
+	}
+	
+	public static void displayBagContents(HashSet<Coin> bagOfCoins) {
+		for(Coin coin: bagOfCoins) {
+			System.out.println("Denomination: " + coin.getDenomination());
+		}
+	}
+	
+	public static void displayBagDetails(HashSet<Coin> bagOfCoins) {
+		
+		if(bagOfCoins.isEmpty()) 
+			System.out.println("There are no coins in the bag");
+		else
+			System.out.println("There are " + bagOfCoins.size() + " coins in the bag");
 	}
 }
