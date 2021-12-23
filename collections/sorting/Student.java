@@ -1,6 +1,6 @@
 package collections.sorting;
 
-public class Student {
+public class Student implements Comparable<Student> {
 	private String firstName;
 	private String lastName;
 	private int mark;
@@ -35,6 +35,20 @@ public class Student {
 		this.mark = mark;
 	}
 	
+	public String toString() {
+		return "Student Details: " + firstName + " " + lastName + " " + mark;
+	}
+	
+	@Override
+	public int compareTo(Student stud2) {
+		
+	   if(Integer.valueOf(mark).compareTo(Integer.valueOf(stud2.getMark())) < 0)
+		   return -1;
+	   if(Integer.valueOf(mark).compareTo(Integer.valueOf(stud2.getMark())) == 0)
+		   return 0;
+	   
+	   return 1;
+	}
 	
 	
 }
