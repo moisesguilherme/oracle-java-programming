@@ -7,9 +7,11 @@ public class SortExample {
 	public static void main(String[] args) {
 		int[] numbers = {40, 7, 59, 4, 1};
 		displayValues(numbers);
+		sequentialSearch(numbers, 13);
+		sequentialSearch(numbers, 7);
 		//selectionSort(numbers);
-		bubbleSort(numbers);
-		displayValues(numbers);
+		//bubbleSort(numbers);
+		//displayValues(numbers);
 	}
 	
 	static void selectionSort(int[] numbers) {
@@ -50,6 +52,20 @@ public class SortExample {
 		}
 		
 		System.out.println("\n");
+	}
+	
+	
+	static void sequentialSearch(int[] numbers, int value) {
+		for(int i = 0; i < numbers.length ; i++) {
+			if(numbers[i] == value) {
+				System.out.println("The number " + value + " is at position "
+						+ i + " in the list");
+				
+				return;
+			}
+			
+		}
+		System.out.println("The number " + value + " is not in the list");
 	}
 
 }
