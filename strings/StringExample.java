@@ -3,12 +3,24 @@ package strings;
 public class StringExample {
 
 	public static void main(String[] args) {
-		String str = "Sample String teste";
+		//String str = "Sample String teste";
 		
 		//displayString(str);
 		//displayStringBackwards(str);
 		//countSpacesInString(str);
-		searchString(str, 'S');
+		//searchString(str, 'S');
+		
+		String sentence = "This is my sentence";
+		String[] words = sentence.split("[ie]");
+		
+		for(String word: words)
+			System.out.println(word + ", ");
+		
+		//String[] tokens = sentence.split("i");
+		/*
+		for(String token: tokens)
+			System.out.println(token + ", ");
+		*/
 
 	}
 	
