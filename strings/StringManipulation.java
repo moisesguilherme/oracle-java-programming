@@ -27,13 +27,13 @@ public class StringManipulation {
 	
 	public static void showWords(ArrayList<String> words) {
 		for(String word: words)
-			System.out.println("Word: " + word);
+			System.out.print(word + ", ");
 	}
 	
 	public static void split(String str, String s) {
 		String[] words = str.split(s);
 		
 		for(String word: words)
-			System.out.println("Word " + word);		
+			System.out.print(word + ", ");		
 	}
 }
