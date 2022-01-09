@@ -17,7 +17,7 @@ public class RhymeGame {
 	}
 	
 	private static boolean rhymningAnimal(String animal) {
-		return animal.matches("[a-zA-Z](at|AT)");
+		return animal.matches("[a-zA-Z]{1,2}(at|AT)");
 	}
 	
 	private static String getAnimal(Scanner in) {
