@@ -8,10 +8,14 @@ public class regularexpressionexample {
 		else
 		   System.out.println("This is a Valid Animal");
 		*/
-		String str = "9a";
-		System.out.println(viewIfMatch(str));
+
+		//String str = "0a";
+		//System.out.println(viewIfMatch(str));
+		//System.out.println(numberFollowedWithAnyCharacter(str));
 		
-		System.out.println(anyCharacter(str));
+		String code = "K1234512345";
+		System.out.println(isValidCode(code));
+		
 	}
 	
 	public static boolean getAnimal(String animal) {
@@ -24,8 +28,16 @@ public class regularexpressionexample {
 		return str.matches("[ 0-9a-zA-Zbcde]");
 	}
 	
-	public static boolean anyCharacter(String str) {
+	public static boolean numberFollowedWithAnyCharacter(String str) {
 		return str.matches("[0-9].");
+	}
+	
+	public static boolean isValidCode(String str) {
+		//Valid Code: K1234512345
+		//. any character in regular expressions
+		//? O or 1 occurrence 
+		//{10} sequencia de 10 digitos de [0-5]
+		return str.matches(".?[0-5]{10}");
 	}
 
 }
