@@ -1,4 +1,4 @@
-package generics.exemple1;
+package generics.exemple;
 
 public class TestExample {
 

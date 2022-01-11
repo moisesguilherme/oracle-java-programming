@@ -1,4 +1,4 @@
-package generics.exemple1;
+package generics.exemple;
 
 public class Example<Type1, Type2> {
 	private Type1 t1;
