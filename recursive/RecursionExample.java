@@ -3,7 +3,8 @@ package recursive;
 public class RecursionExample {
 
 	public static void main(String[] args) {
-		recurseMethod(4);
+		//recurseMethod(4);
+		System.out.println(factorial(5));
 
 	}
 	
@@ -16,6 +17,15 @@ public class RecursionExample {
 			System.out.println(""+num);
 			return;
 		}
+	}
+	
+	public static double factorial(double d) {
+		if(d <= 1) {
+			return 1;
+		}else {
+			return d * factorial(d - 1);
+		}
+				
 	}
 
 }
