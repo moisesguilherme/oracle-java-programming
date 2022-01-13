@@ -27,5 +27,14 @@ public class RecursionExample {
 		}
 				
 	}
+	
+	public static double fibonacci(double d) {
+		if( d < 2) {
+			return d;			
+		}
+		else {
+			return fibonacci(d - 1) + fibonacci(d - 2);
+		}
+	}
 
 }
