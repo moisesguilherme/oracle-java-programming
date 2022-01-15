@@ -20,10 +20,11 @@ public class FileHandling {
 		// Paths.get(uri)
 		// Files.newBufferedReader()
 		// Charset.forName();
-		//ArrayList<String> employees = new ArrayList<String>();
-		//readFile(employees);
-		//displayEmployees(employees);
-		//writeFile(employees);
+		
+		ArrayList<String> employees = new ArrayList<String>();
+		readFile(employees);
+		displayEmployees(employees);
+		writeFile(employees);
 		
 		FileSystem fs = FileSystems.getDefault();
 		Path path = fs.getPath("/home/moises/eclipse-workspace/JavaBank/employess.txt");
