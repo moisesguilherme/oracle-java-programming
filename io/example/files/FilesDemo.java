@@ -1,6 +1,7 @@
 package io.example.files;
 
 import java.io.IOException;
+import java.nio.file.DirectoryNotEmptyException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -18,6 +19,8 @@ public class FilesDemo {
 		
 		if(users != null)
 			displayFileStatus(users, settings);
+		
+		deleteFile(dirPath);
 	}
 	
 	static Path checkFiles(Path dirPath, Path filePath){
@@ -42,6 +45,21 @@ public class FilesDemo {
 		System.out.println("Executable :" + Files.isExecutable(users));
 		System.out.println("Hidden :" + Files.isHidden(users));
 		System.out.println("Same files :" + Files.isSameFile(users, settings));
+	}
+	
+	static void deleteFile(Path filePath) {
+		try {
+			if(Files.deleteIfExists(filePath)) {
+				Files.delete(filePath);
+				System.out.println(filePath.toString() + " deleted!");
+			}
+			else 
+			  System.out.println(filePath.toString() + " not found!");
+		}catch(DirectoryNotEmptyException e) {
+			System.out.println("The directory is not empty");
+		}catch(IOException x) {
+			System.out.println(x);
+		}
 	}
 
 }
