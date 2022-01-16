@@ -1,5 +1,6 @@
 package io.example;
 
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -14,7 +15,13 @@ public class RelativizePathsDemo {
 		/*
 		System.out.println("p1.realativize(p1) ["
 				+ p1.relativize(p2).toString() + "]");
-		*/		
+		*/
+		
+		//Symbolic link
+		//Files.createSymbolicLink(p1, target, attrs)
+		//Files.createLink(p1, p1);
+		//Files.readSymbolicLink(Path)
+		//System.out.println(Files.isSymbolicLink(p1));
 	}
 
 }
