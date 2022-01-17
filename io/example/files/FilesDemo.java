@@ -59,7 +59,7 @@ public class FilesDemo {
 			System.out.println("The directory is not empty");
 		}catch(IOException x) {
 			System.out.println(x);
-		}
+		}		
 	}
 
 }
