@@ -10,12 +10,21 @@ public class ReadFileExample {
 
 	public static void main(String[] args) {
 		
-		//String out;
-		//out = readEntry();
-		//System.out.println(out);
-		
+		StringBuffer sb = new StringBuffer();
+		char[] input;
+		System.out.println("Enter a string: ");
+		input = readEntry();
+		for(int i = 0; i < input.length; i++) {
+			System.out.println(">>>" + input[i]);
+			if(input[i] != '\n' && input[i] != '\0') {
+				sb.append(input[i]);
+				
+			}
+		}
+		System.out.println(sb.toString());		
+
 		//System.out.println(getAge());
-		System.out.println(readFile());
+		//System.out.println(readFile());
 	}
 	
 	private static String readFile() {
@@ -38,17 +47,18 @@ public class ReadFileExample {
 	}
 
 		
-	private static String readEntry() {
+	private static char[] readEntry() {
 		try {
 			int c;
 			StringBuffer buffer = new StringBuffer();
 			c = System.in.read();
 			while(c != '\n' && c != -1) {
-				System.out.println(">>>" + (char)c);
 				buffer.append((char)c);
 				c = System.in.read();
 			}
-			return buffer.toString().trim();
+			char[] array = new char[buffer.length()];
+			buffer.getChars(0, buffer.length(), array, 0);
+			return array;
 		}
 		catch(IOException e) {
 			return null;
