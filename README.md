@@ -2,17 +2,17 @@
 
 Neste repositório coloco anotações e referências dos meus estudos da linguagem Java. Cada tópico está semperado por uma branch.
 
-  2-3-Abrstract-Class
-  2-4-Exceptions-Assertions
-  3-1-Generics
-  3-2-Collections-Part-1
-  3-3-Collections-Part-2
-  3-4-Sorting-and-Searching
-  4-1-String-Processing
-  4-2-Regular-Expressions
-  4-3-Recursion
-  5-1-Basics-of-IO
-  5-2-Input-and-output-fundamentals
+- 2-3-Abrstract-Class
+- 2-4-Exceptions-Assertions
+- 3-1-Generics
+- 3-2-Collections-Part-1
+- 3-3-Collections-Part-2
+- 3-4-Sorting-and-Searching
+- 4-1-String-Processing
+- 4-2-Regular-Expressions
+- 4-3-Recursion
+- 5-1-Basics-of-IO
+- 5-2-Input-and-output-fundamentals
 
 # 5-2 Input and Output Fundamentals
 
