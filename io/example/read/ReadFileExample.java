@@ -1,30 +1,36 @@
 package io.example.read;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class ReadFileExample {
 
 	public static void main(String[] args) {
-		
+		/*
 		StringBuffer sb = new StringBuffer();
 		char[] input;
 		System.out.println("Enter a string: ");
 		input = readEntry();
 		for(int i = 0; i < input.length; i++) {
-			System.out.println(">>>" + input[i]);
 			if(input[i] != '\n' && input[i] != '\0') {
 				sb.append(input[i]);
 				
 			}
 		}
 		System.out.println(sb.toString());		
-
+		*/
 		//System.out.println(getAge());
 		//System.out.println(readFile());
+		
+		writeFile("Teste");
 	}
 	
 	private static String readFile() {
@@ -44,6 +50,20 @@ public class ReadFileExample {
 			System.err.println(e);
 		}
 		return null;
+	}
+	
+	
+	private static void writeFile(String user) {
+		
+		try {
+			Path path = Paths.get("/home/moises/JavaProgramming/userNames.txt");
+			PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(path.toString(), true)));		
+			writer.println(user);
+			writer.close();
+		}catch(IOException e) {
+			System.out.println("Erro:" + e);
+		}
+		
 	}
 
 		

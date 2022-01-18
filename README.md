@@ -15,6 +15,17 @@ Neste repositório coloco anotações e referências dos meus estudos da linguag
 - 5-2-Input-and-output-fundamentals
 
 # 5-2 Input and Output Fundamentals
+- Use streams to read and write files
+- Read and write objects by using serialization
+
+- Deserialization
+- File Name
+- Tree
+- Resolve path
+- Output Streams
+- Standard input
+- Standard output
+- Standard Error
 
 ```java
 //Create path variables
@@ -54,3 +65,4 @@ System.out a PrintStream
 
 System.err a PrintStream
 ```
+
