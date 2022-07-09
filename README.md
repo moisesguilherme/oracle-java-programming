@@ -1,6 +1,6 @@
 # Java Programming
 
-Neste repositório coloco anotações e referências dos meus estudos da linguagem Java. Cada tópico está semperado por uma branch.
+Neste repositório coloco anotações e referências dos meus estudos da linguagem Java. Cada tópico está seperado por uma branch.
 
 - 2-3-Abrstract-Class
 - 2-4-Exceptions-Assertions
